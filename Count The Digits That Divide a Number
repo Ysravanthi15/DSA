@@ -1,0 +1,19 @@
+
+=================== Count the Digits That Divide a Number=================================
+class Solution {
+    public int countDigits(int num) {
+       int count=0;
+       int av=num;
+       while(av!=0)
+       {
+        int rem=av%10;
+        if(num%rem==0)
+        count++;
+        av/=10;
+       }
+       return count;
+    }
+}
+Input: num = 121
+Output: 2
+Explanation: 121 is divisible by 1, but not 2. Since 1 occurs twice as a digit, we return 2.
