@@ -1,0 +1,23 @@
+================Difference Between Element Sum and Digit Sum of an Array===================
+class Solution {
+    public int differenceOfSum(int[] nums) {
+        int totalsum=0;
+        int digitsum=0;
+        for(int num:nums)
+        {
+            totalsum+=num;
+            while(num>0)
+            {
+                digitsum+=num%10;
+                num/=10;
+            }
+        }
+        return totalsum-digitsum;
+    }
+}
+Input: nums = [1,15,6,3]
+Output: 9
+Explanation: 
+The element sum of nums is 1 + 15 + 6 + 3 = 25.
+The digit sum of nums is 1 + 1 + 5 + 6 + 3 = 16.
+The absolute difference between the element sum and digit sum is |25 - 16| = 9.
