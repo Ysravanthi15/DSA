@@ -1,0 +1,9 @@
+===========================CONVERTS A UPPERCASE STRING INTO LOWER CASE:==========================
+class Solution {
+    public String toLowerCase(String s) {
+        return s.toLowerCase();
+    }
+}
+Example 1:
+Input: s = "Hello"
+Output: "hello"
