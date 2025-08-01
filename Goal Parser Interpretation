@@ -1,0 +1,15 @@
+======================Goal Parser Interpretation (replace brackets with given chars:using replace method)====================== 
+class Solution {
+    public String interpret(String command) {
+        return command.replace("()","o").replace("(al)","al");
+    }
+}
+Example 1:
+
+Input: command = "G()(al)"
+Output: "Goal"
+Explanation: The Goal Parser interprets the command as follows:
+G -> G
+() -> o
+(al) -> al
+The final concatenated result is "Goal".
