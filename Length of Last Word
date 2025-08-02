@@ -1,0 +1,19 @@
+==================Length of Last Word====================
+
+class Solution {
+    public int lengthOfLastWord(String s) {
+         //trim() is a method used to remove spaces at start and end
+        s=s.trim();
+        String[] words=s.split(" ");//{"Hello","World"}
+        String lastword=words[words.length-1];//gets the lastword
+        return lastword.length();//returns the length
+
+        
+    }
+}
+
+Example 1:
+
+Input: s = "Hello World"
+Output: 5
+Explanation: The last word is "World" with length 5
