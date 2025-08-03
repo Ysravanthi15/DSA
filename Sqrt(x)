@@ -1,0 +1,12 @@
+===================Sqrt(x)=============
+class Solution {
+    public int mySqrt(int x) {
+        double res= Math.sqrt(x);
+        return (int) res;
+    }
+}
+
+Example 1:
+Input: x = 4
+Output: 2
+Explanation: The square root of 4 is 2, so we return 2.
