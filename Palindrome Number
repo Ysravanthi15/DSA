@@ -1,0 +1,13 @@
+============Palindrome Number======================
+class Solution {
+    public boolean isPalindrome(int x) {
+        int palindrome=0;
+        int temp=x;
+        while(x>0){
+            int digit=x%10;
+            palindrome=palindrome*10+digit;
+            x/=10;
+        }
+        return temp==palindrome;
+    }
+}
