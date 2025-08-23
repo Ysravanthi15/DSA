@@ -1,0 +1,21 @@
+=================Find the Difference=======================
+class Solution {
+    public char findTheDifference(String s, String t) {
+        int sumS = 0, sumT = 0;
+        
+        for (char c : s.toCharArray()) sumS += c;
+        for (char c : t.toCharArray()) sumT += c;
+        
+        return (char)(sumT - sumS);
+    }
+}
+
+Example 1:
+
+Input: s = "abcd", t = "abcde"
+Output: "e"
+Explanation: 'e' is the letter that was added.
+Example 2:
+
+Input: s = "", t = "y"
+Output: "y"
