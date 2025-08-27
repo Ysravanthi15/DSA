@@ -1,0 +1,35 @@
+
+=============Student Attendance Record I===============
+
+class Solution {
+    public boolean checkRecord(String s) {
+        int absentCount = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+
+            if (c == 'A') {
+                absentCount++;
+                if (absentCount >= 2) return false; // More than 1 absence
+            }
+
+            // Check for 3 consecutive 'L'
+            if (c == 'L') {
+                if (i >= 2 && s.charAt(i-1) == 'L' && s.charAt(i-2) == 'L') {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+}
+Example 1:
+
+Input: s = "PPALLP"
+Output: true
+Explanation: The student has fewer than 2 absences and was never late 3 or more consecutive days.
+Example 2:
+
+Input: s = "PPALLL"
+Output: false
+Explanation: The student was late 3 consecutive days in the last 3 days, so is not eligible for the award.
