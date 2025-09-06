@@ -1,0 +1,22 @@
+================Number of Segments in a String==============
+class Solution {
+    public int countSegments(String s) {
+         // Trim the string to remove leading/trailing spaces
+        s = s.trim();
+        if (s.isEmpty()) return 0;
+        
+        // Split by one or more spaces and count parts
+        String[] segments = s.split("\\s+");
+        return segments.length;
+
+    }
+}
+Example 1:
+
+Input: s = "Hello, my name is John"
+Output: 5
+Explanation: The five segments are ["Hello,", "my", "name", "is", "John"]
+Example 2:
+
+Input: s = "Hello"
+Output: 1
