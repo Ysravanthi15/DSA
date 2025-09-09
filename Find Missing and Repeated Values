@@ -1,0 +1,29 @@
+===============Find Missing and Repeated Values==================
+class Solution {
+    public int[] findMissingAndRepeatedValues(int[][] grid) {
+        int n = grid.length;
+        int size = n * n;
+        int[] count = new int[size + 1]; // To count occurrences
+        int[] ans = new int[2];
+
+        // Count frequency of each number
+        for (int[] row : grid) {
+            for (int num : row) {
+                count[num]++;
+            }
+        }
+
+        // Find repeating and missing numbers
+        for (int i = 1; i <= size; i++) {
+            if (count[i] == 2) ans[0] = i; // Repeated
+            if (count[i] == 0) ans[1] = i; // Missing
+        }
+
+        return ans;
+    }
+}
+Example 1:
+
+Input: grid = [[1,3],[2,2]]
+Output: [2,4]
+Explanation: Number 2 is repeated and number 4 is missing so the answer is [2,4].
