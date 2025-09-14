@@ -1,0 +1,26 @@
+==============Find Smallest Letter Greater Than Target==============
+class Solution {
+    public char nextGreatestLetter(char[] letters, char target) {
+        int low = 0, high = letters.length - 1;
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+
+            // If current letter is <= target, search right half
+            if (letters[mid] <= target) {
+                low = mid + 1;
+            } else { 
+                // Current letter is greater than target, search left half
+                high = mid - 1;
+            }
+        }
+
+        // If low goes past the last index, wrap around to the first element
+        return low < letters.length ? letters[low] : letters[0];
+    }
+}
+Example 1:
+
+Input: letters = ["c","f","j"], target = "a"
+Output: "c"
+Explanation: The smallest character that is lexicographically greater than 'a' in letters is 'c'.
