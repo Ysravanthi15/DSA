@@ -1,0 +1,21 @@
+=============Excel Sheet Column Title================\
+class Solution {
+    public String convertToTitle(int columnNumber) {
+       StringBuilder sb = new StringBuilder();
+        while (columnNumber > 0) {
+            columnNumber--; // adjust because there's no zero digit in this system
+            int rem = columnNumber % 26;
+            sb.append((char)('A' + rem));
+            columnNumber /= 26;
+        }
+        return sb.reverse().toString(); 
+    }
+}
+Example 1:
+
+Input: columnNumber = 1
+Output: "A"
+Example 2:
+
+Input: columnNumber = 28
+Output: "AB"
